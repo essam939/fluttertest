@@ -19,10 +19,10 @@ class ProductOverviewScreen extends StatelessWidget {
     ),
     Product(
         id:'p3',
-        title:'Red shirt',
+        title:'blue shirt',
         description:'A red shirt - it is pretty red!',
         price:100.99,
-        imageUrl:'https://www.odsdesignerclothing.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/8/9874.jpg'
+        imageUrl:'https://www.giglio.com/images/prodPage/A30274.002_1.jpg'
     ),
     Product(
         id:'p4',
@@ -44,13 +44,17 @@ class ProductOverviewScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         itemCount: loadedProduct.length,
          //how many items should view
-         itemBuilder: (ctx,i)=>Container(),
+         itemBuilder: (ctx,i)=>ProductItem(
+             loadedProduct[i].id,
+             loadedProduct[i].title,
+             loadedProduct[i].imageUrl
+         ),
         //how many Column should have
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 3/2,
             crossAxisSpacing: 10,
-            mainAxisSpacing: 10
+            mainAxisSpacing: 10,
         ),
     ),
     );
